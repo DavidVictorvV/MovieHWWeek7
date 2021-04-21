@@ -1,0 +1,7 @@
+<h1 id="tableLabel">Add movie</h1>
+
+Name:        <input [(ngModel)]="movie.movieName" /><br/>
+Genre:       <input [(ngModel)]="movie.genre" /><br />
+Length:       <input [(ngModel)]="movie.movieLength" /><br />
+Release date:<input  type="date" [(ngModel)]="movie.releaseDate" /><br />
+<button class="btn btn-primary" (click)="saveMovie()">Save Movie</button>

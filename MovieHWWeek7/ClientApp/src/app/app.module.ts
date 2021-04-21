@@ -10,6 +10,8 @@ import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { MovieComponent } from './movie/movie.component';
+import { MovieAddComponent } from './movie/movie-add.component';
+import { MovieUpdateComponent } from './movie/movie-update.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { MovieComponent } from './movie/movie.component';
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    MovieComponent
+    MovieComponent,
+    MovieAddComponent,
+    MovieUpdateComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -29,7 +33,9 @@ import { MovieComponent } from './movie/movie.component';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
-      { path: 'movie', component: MovieComponent },
+      { path: 'movies', component: MovieComponent },
+      { path: 'movie-add', component: MovieAddComponent },
+      { path: 'movie-update', component: MovieUpdateComponent },
     ])
   ],
   providers: [],

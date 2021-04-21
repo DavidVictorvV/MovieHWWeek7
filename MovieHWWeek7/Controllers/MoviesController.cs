@@ -76,28 +76,27 @@ namespace MovieHWWeek7.Controllers
         // POST: api/Movies1
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Movie>> PostMovie(Movie movie)
+        public async Task PostMovie([FromBody] Movie movie)
         {
+            if (movie.ID == Guid.Empty)
+            {
+                movie.ID = Guid.NewGuid();
+            }
+
             _context.Movie.Add(movie);
             await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetMovie", new { id = movie.ID }, movie);
         }
 
         // DELETE: api/Movies1/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteMovie(Guid id)
+        public async Task DeleteMovie(Guid id)
         {
-            var movie = await _context.Movie.FindAsync(id);
-            if (movie == null)
+            Movie movie = await _context.Movie.FindAsync(id);
+            if (movie != null)
             {
-                return NotFound();
+                _context.Movie.Remove(movie);
+                await _context.SaveChangesAsync();
             }
-
-            _context.Movie.Remove(movie);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
         }
 
         private bool MovieExists(Guid id)

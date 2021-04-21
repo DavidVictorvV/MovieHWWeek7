@@ -15,10 +15,6 @@ namespace MovieHWWeek7.Data
         {
         }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<Models.Movie>().HasData(new Models.Movie() { ID = Guid.NewGuid(), MovieName = "StarWars", Genre = "Action", MovieLength= 80, ReleaseDate = new DateTime(1,1,1) });
-        }
+      
     }
 }
