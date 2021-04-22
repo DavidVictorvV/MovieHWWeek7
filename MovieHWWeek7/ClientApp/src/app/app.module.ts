@@ -30,13 +30,13 @@ import { MovieUpdateComponent } from './movie/movie-update.component';
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
-      { path: 'movies', component: MovieComponent },
-      { path: 'movie-add', component: MovieAddComponent },
-      { path: 'movie-update', component: MovieUpdateComponent },
-    ])
+    { path: '', component: HomeComponent, pathMatch: 'full' },
+    { path: 'counter', component: CounterComponent },
+    { path: 'fetch-data', component: FetchDataComponent },
+    { path: 'movies', component: MovieComponent },
+    { path: 'movie-add', component: MovieAddComponent },
+    { path: 'movie-update', component: MovieUpdateComponent },
+], { relativeLinkResolution: 'legacy' })
   ],
   providers: [],
   bootstrap: [AppComponent]
