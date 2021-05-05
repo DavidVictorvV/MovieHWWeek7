@@ -12,7 +12,11 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { MovieComponent } from './movie/movie.component';
 import { MovieAddComponent } from './movie/movie-add.component';
 import { MovieUpdateComponent } from './movie/movie-update.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { MatSliderModule } from '@angular/material/slider';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -23,7 +27,8 @@ import { MovieUpdateComponent } from './movie/movie-update.component';
     FetchDataComponent,
     MovieComponent,
     MovieAddComponent,
-    MovieUpdateComponent
+    MovieUpdateComponent,
+     
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -36,7 +41,11 @@ import { MovieUpdateComponent } from './movie/movie-update.component';
     { path: 'movies', component: MovieComponent },
     { path: 'movie-add', component: MovieAddComponent },
     { path: 'movie-update', component: MovieUpdateComponent },
-], { relativeLinkResolution: 'legacy' })
+], { relativeLinkResolution: 'legacy' }),
+    BrowserAnimationsModule,
+    MatSlideToggleModule,
+    MatSliderModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
